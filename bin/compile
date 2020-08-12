@@ -17,10 +17,10 @@ BPLOG_PREFIX="buildpack.nodejs"
 if [ -z "${PROJECT_NAME}" ]; then
   BUILD_DIR=${1:-}
 else
-  BUILD_DIR="${1:-}/$PROJECT_NAME"
+  BUILD_DIR="${1:-}/${PROJECT_NAME}"
 fi
 echo "Project Name"
-echo $PROJECT_NAME
+echo "${PROJECT_NAME}"
 
 BUILD_DIR=${1:-}
 CACHE_DIR=${2:-}
