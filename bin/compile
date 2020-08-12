@@ -19,8 +19,8 @@ if [ -z "${PROJECT_NAME}" ]; then
 else
   BUILD_DIR="${1:-}/$PROJECT_NAME"
 fi
-topic "Project Name"
-info $PROJECT_NAME
+echo "Project Name"
+echo $PROJECT_NAME
 
 BUILD_DIR=${1:-}
 CACHE_DIR=${2:-}
