@@ -53,7 +53,7 @@ source "$BP_DIR/lib/builddata.sh"
 # shellcheck source=lib/yarn-2.sh
 source "$BP_DIR/lib/yarn-2.sh"
 
-export_env_dir ENV_DIR
+export_env_dir "$ENV_DIR"
 if [ -z ${PROJECT_NAME:-} ]; then
   BUILD_DIR=${1:-}
 else
