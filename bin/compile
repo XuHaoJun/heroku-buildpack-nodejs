@@ -14,7 +14,9 @@ unset GIT_DIR     # Avoid GIT_DIR leak from previous build steps
 BPLOG_PREFIX="buildpack.nodejs"
 
 ### Configure directories
-if [ -z "${PROJECT_NAME}" ]; then
+ENV_DIR=${3:-}
+export_env_dir ENV_DIR
+if [ -z ${PROJECT_NAME:-} ]; then
   BUILD_DIR=${1:-}
 else
   BUILD_DIR="${1:-}/${PROJECT_NAME}"
@@ -22,9 +24,7 @@ fi
 echo "Project Name"
 echo "${PROJECT_NAME}"
 
-BUILD_DIR=${1:-}
 CACHE_DIR=${2:-}
-ENV_DIR=${3:-}
 BP_DIR=$(cd "$(dirname "${0:-}")"; cd ..; pwd)
 
 ### Load dependencies
